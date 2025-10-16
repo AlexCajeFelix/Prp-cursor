@@ -1,0 +1,51 @@
+{
+  "name": "prps-generic-cursor",
+  "version": "1.0.0",
+  "description": "Estrutura genérica para implementar Product Requirement Prompts (PRPs) adaptada para uso com o Cursor IDE",
+  "main": "index.js",
+  "scripts": {
+    "validate": "python scripts/validate_prp.py",
+    "validate:all": "python scripts/validate_prp.py examples/",
+    "generate": "./scripts/generate_from_prp.sh",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "echo \"Configurando ambiente para PRPs...\" && echo \"Verifique se o Cursor está instalado e configurado\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seu-usuario/PRPs-generic-cursor.git"
+  },
+  "keywords": [
+    "prp",
+    "product-requirement-prompts",
+    "cursor",
+    "ai",
+    "code-generation",
+    "templates",
+    "development",
+    "prompt-engineering"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seu-usuario/PRPs-generic-cursor/issues"
+  },
+  "homepage": "https://github.com/seu-usuario/PRPs-generic-cursor#readme",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.8.0"
+  },
+  "files": [
+    "templates/",
+    "examples/",
+    "docs/",
+    "config/",
+    "scripts/",
+    ".cursor/",
+    "README.md",
+    "LICENSE"
+  ]
+}
