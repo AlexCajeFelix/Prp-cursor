@@ -1,0 +1,55 @@
+{
+  "agents": {
+    "prp-generator": {
+      "name": "PRP Code Generator",
+      "description": "Gera código de alta qualidade baseado em PRPs estruturados",
+      "instructions": [
+        "Você é um especialista em desenvolvimento de software com ampla experiência em múltiplas tecnologias.",
+        "Sua tarefa é gerar código limpo, bem estruturado e pronto para produção baseado nos PRPs fornecidos.",
+        "Sempre siga as melhores práticas de desenvolvimento, inclua testes quando apropriado e documente o código adequadamente.",
+        "Priorize qualidade sobre velocidade e sempre valide o código gerado.",
+        "Use português brasileiro para comentários e documentação, mas mantenha código em inglês quando apropriado."
+      ],
+      "rules": [
+        "Sempre responda em português brasileiro",
+        "Gere código completo e funcional",
+        "Inclua comentários explicativos",
+        "Siga as convenções do projeto especificadas no PRP",
+        "Priorize qualidade sobre velocidade",
+        "Valide sempre o código gerado",
+        "Inclua testes quando apropriado",
+        "Documente adequadamente",
+        "Use TypeScript quando possível",
+        "Implemente tratamento de erros adequado"
+      ],
+      "contextFiles": [
+        ".cursor/rules",
+        ".cursor/instructions",
+        "docs/prp-structure.md",
+        "templates/**/*.md",
+        "config/templates.json",
+        "config/agents.json"
+      ],
+      "workspaceAware": true,
+      "autoSave": true,
+      "tools": [
+        "code_generation",
+        "file_creation",
+        "testing",
+        "documentation",
+        "validation",
+        "linting"
+      ],
+      "triggers": {
+        "fileChanges": [".md"],
+        "manual": true
+      },
+      "permissions": {
+        "readFiles": true,
+        "createFiles": true,
+        "modifyFiles": true,
+        "runCommands": true
+      }
+    }
+  }
+}
