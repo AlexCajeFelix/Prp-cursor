@@ -4,12 +4,30 @@
   "runtimeConfiguration": {
     "node": "20.0.0",
     "python": "3.11.0",
+    "installScript": "npm install && python3 -m pip install -r requirements.txt 2>/dev/null || echo 'No requirements.txt found'",
+    "startScript": "echo 'Environment ready for PRP development'",
+    "defaultTerminals": [
+      {
+        "name": "Main Terminal",
+        "command": "bash"
+      },
+      {
+        "name": "Node Terminal", 
+        "command": "node --version && npm --version"
+      },
+      {
+        "name": "Python Terminal",
+        "command": "python3 --version && python3 -c 'import sys; print(f\"Python {sys.version}\")'"
+      }
+    ],
     "packages": [
       "npm",
       "python3-pip",
       "git",
       "curl",
-      "wget"
+      "wget",
+      "nodejs",
+      "build-essential"
     ]
   },
   "agents": [
@@ -67,8 +85,13 @@
   },
   "githubAccess": {
     "enabled": true,
-    "permissions": ["read", "write"],
-    "repositories": ["AlexCajeFelix/Prp-cursor"]
+    "permissions": [
+      "read",
+      "write"
+    ],
+    "repositories": [
+      "AlexCajeFelix/Prp-cursor"
+    ]
   },
   "sharing": {
     "enabled": true,
