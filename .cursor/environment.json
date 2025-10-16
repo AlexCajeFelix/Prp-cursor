@@ -1,5 +1,17 @@
 {
-  "agentCanUpdateSnapshot": true,
+  "agentCanUpdateSnapshot": false,
+  "baseEnvironment": "ubuntu",
+  "runtimeConfiguration": {
+    "node": "20.0.0",
+    "python": "3.11.0",
+    "packages": [
+      "npm",
+      "python3-pip",
+      "git",
+      "curl",
+      "wget"
+    ]
+  },
   "agents": [
     {
       "slug": "prp-generator",
@@ -38,5 +50,28 @@
         "docs/best-practices.md"
       ]
     }
-  ]
+  ],
+  "secrets": {
+    "description": "Variáveis de ambiente sensíveis para os agentes",
+    "required": [],
+    "optional": [
+      "OPENAI_API_KEY",
+      "GITHUB_TOKEN",
+      "NPM_TOKEN",
+      "DATABASE_URL"
+    ]
+  },
+  "usageBasedPricing": {
+    "enabled": false,
+    "description": "Pricing baseado em uso dos agentes"
+  },
+  "githubAccess": {
+    "enabled": true,
+    "permissions": ["read", "write"],
+    "repositories": ["AlexCajeFelix/Prp-cursor"]
+  },
+  "sharing": {
+    "enabled": true,
+    "scope": "workspace"
+  }
 }
