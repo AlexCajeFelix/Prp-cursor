@@ -35,6 +35,30 @@ PRPs (Product Requirement Prompts) são prompts estruturados que fornecem contex
 - `/refactor-simple` - Refatorações seguras
 - E mais 6 comandos especializados
 
+### 🤖 **NOVO: Agentes BMAD Integrados**
+
+Inspirado no [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD), agora o PRP inclui **6 agentes especializados** para workflow ágil completo:
+
+#### Fase de Planejamento:
+- **`/analyst`** - Analista de requisitos → cria Brief
+- **`/pm`** - Product Manager → cria PRD  
+- **`/architect`** - Arquiteto → define arquitetura técnica
+
+#### Fase de Desenvolvimento:
+- **`/scrum-master` ou `/sm`** - Quebra em Development Stories
+- **`/dev`** - Developer → implementa código com testes
+- **`/qa`** - QA Engineer → valida qualidade
+
+**Workflow Completo**: `Analyst → PM → Architect → Scrum Master → Dev → QA`
+
+#### 🚀 **Sistema Automático**:
+- **`/bmad-auto`** - Executa workflow completo automaticamente
+- **Comunicação entre agentes** - Handoffs automáticos
+- **Zero intervenção manual** - Do Brief até código implementado
+
+📖 [Documentação Completa da Integração BMAD](docs/bmad-integration.md)  
+🤖 [Sistema BMAD Full Automático](docs/bmad-auto-system.md)
+
 ## 📁 Estrutura do Projeto
 
 ```

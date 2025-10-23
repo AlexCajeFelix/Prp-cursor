@@ -9,6 +9,7 @@ Este arquivo contém diretrizes específicas para o projeto PRP, baseado no sist
 - **Implementação em Uma Passada**: Objetivo é sucesso na primeira tentativa
 - **Validação Executável**: Comandos que a IA pode executar e corrigir
 - **Progressão Incremental**: Começar simples e evoluir
+- **Agentes Especializados**: Roles bem definidos colaborando (integração BMAD)
 
 ### Qualidade de Código
 - **Código Limpo**: Legível, bem estruturado e documentado
@@ -40,6 +41,50 @@ PRP/
 - **Markdown**: Documentação e PRPs
 - **JSON**: Configurações e templates
 - **Bash**: Comandos de validação
+
+## 🤖 Integração BMAD - Agentes Especializados
+
+### Sistema de Agentes
+
+O PRP agora inclui 6 agentes especializados inspirados no [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD):
+
+**Fase de Planejamento** (Sequencial):
+1. **Analyst** (`/analyst`) - Análise de requisitos → Brief
+2. **PM** (`/pm`) - Especificação de produto → PRD
+3. **Architect** (`/architect`) - Arquitetura técnica → Architecture Doc
+
+**Fase de Desenvolvimento** (Iterativo):
+4. **Scrum Master** (`/scrum-master` ou `/sm`) - Quebra em stories → Development Stories
+5. **Dev** (`/dev`) - Implementação → Código + Dev Notes
+6. **QA** (`/qa`) - Validação → QA Reports
+
+### Quando Usar BMAD vs PRP Tradicional
+
+**Use BMAD Workflow quando**:
+- Projeto novo do zero
+- Precisa de planejamento robusto
+- Projeto grande/complexo
+- Quer separation of concerns
+- Trabalhando com equipe (cada agente = role)
+
+**Use PRP Tradicional quando**:
+- Feature bem definida
+- Projeto pequeno/médio
+- Já tem arquitetura definida
+- Quer implementação rápida
+
+**São compatíveis!** Pode usar BMAD para planejar e PRP para features individuais.
+
+### Documentação BMAD
+
+- **[Integração BMAD](docs/bmad-integration.md)** - Guia completo de uso
+- **[Sistema Automático](docs/bmad-auto-system.md)** - Workflow automático entre agentes
+- **[Guia de Agentes](PRPs/ai_docs/bmad-agents-guide.md)** - Para IAs
+- **Arquivos de Agentes**: `.cursor/agents/` - Definições completas
+- **Comandos**: `.cursor/commands/` - Comandos slash
+- **Templates**: `PRPs/templates/bmad/` - Templates dos documentos
+- **Outputs**: `PRPs/bmad-output/` - Onde outputs são salvos
+- **Scripts**: `PRPs/scripts/` - Scripts de automação e coordenação
 
 ## 📋 Padrões de PRP
 
