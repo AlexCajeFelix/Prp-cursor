@@ -189,6 +189,23 @@ Após execução completa:
 3. **Usar orchestrator** para verificar status
 4. **Iterar** se necessário com workflow manual
 
+## 🤝 Modo Colaborativo (Alternativa)
+
+Para **revisão entre agentes** e **aprovação do usuário**:
+
+```bash
+/bmad-auto-collab "Descrição do projeto"
+```
+
+**Diferenças**:
+- ✅ Todos os agentes revisam cada etapa
+- ✅ Usuário aprova cada decisão
+- ✅ Múltiplas iterações com feedback
+- ✅ Implementação REAL de código
+- ⚠️ Mais lento (requer interação)
+
+📖 [Documentação Completa do Modo Colaborativo](docs/bmad-collaborative-mode.md)
+
 ## 📚 Referências
 
 - **Script**: `PRPs/scripts/bmad_full_auto.py`

@@ -11,6 +11,7 @@ Este script ajuda a gerenciar o workflow dos agentes BMAD:
 import os
 import sys
 import json
+import subprocess
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -263,7 +264,8 @@ Exemplos de uso:
   python bmad_orchestrator.py --project meu-app  # Status de projeto específico
   python bmad_orchestrator.py --workflow         # Mostra workflow sugerido
   python bmad_orchestrator.py --auto "Projeto"   # Executa workflow automático
-  python bmad_orchestrator.py --auto "API REST" --project-name api  # Workflow com nome
+  python bmad_orchestrator.py --collaborative "Projeto"  # Workflow colaborativo
+  python bmad_orchestrator.py --collab "API REST" --project-name api  # Colaborativo com nome
         """
     )
     
@@ -295,15 +297,51 @@ Exemplos de uso:
     )
     
     parser.add_argument(
+        "--collaborative",
+        "--collab",
+        help="Execute collaborative workflow with agent reviews",
+        type=str
+    )
+    
+    parser.add_argument(
         "--project-name",
-        help="Project name for automatic workflow",
+        help="Project name for automatic/collaborative workflow",
         type=str
     )
     
     args = parser.parse_args()
     
+    # Verificar se é execução colaborativa
+    if args.collaborative:
+        # Executar workflow colaborativo
+        cmd = [
+            sys.executable,
+            "PRPs/scripts/bmad_collaborative_workflow.py",
+            args.collaborative
+        ]
+        
+        if args.project_name:
+            cmd.extend(["--project", args.project_name])
+        
+        print(f"🤝 Iniciando workflow colaborativo...")
+        print(f"📝 Descrição: {args.collaborative}")
+        if args.project_name:
+            print(f"📁 Projeto: {args.project_name}")
+        print()
+        
+        try:
+            result = subprocess.run(cmd, cwd=os.getcwd(), capture_output=False)
+            
+            if result.returncode == 0:
+                print("\n✅ Workflow colaborativo concluído com sucesso!")
+            else:
+                print(f"\n❌ Workflow colaborativo falhou com código: {result.returncode}")
+                
+        except Exception as e:
+            print(f"\n❌ Erro executando workflow colaborativo: {e}")
+    
     # Verificar se é execução automática
-    if args.auto:
+    elif args.auto:
         orchestrator = BMADOrchestrator()
         orchestrator.run_auto_workflow(args.auto, args.project_name)
     else:

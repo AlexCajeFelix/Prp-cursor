@@ -56,8 +56,15 @@ Inspirado no [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD), agora 
 - **Comunicação entre agentes** - Handoffs automáticos
 - **Zero intervenção manual** - Do Brief até código implementado
 
+#### 🤝 **Sistema Colaborativo** (NOVO):
+- **`/bmad-auto-collab`** - Workflow com revisão entre agentes
+- **Todos revisam todos** - Feedback de múltiplas perspectivas
+- **Aprovação do usuário** - Controle em cada etapa
+- **Implementação real** - Código realmente criado
+
 📖 [Documentação Completa da Integração BMAD](docs/bmad-integration.md)  
-🤖 [Sistema BMAD Full Automático](docs/bmad-auto-system.md)
+🤖 [Sistema BMAD Full Automático](docs/bmad-auto-system.md)  
+🤝 [Sistema BMAD Colaborativo](docs/bmad-collaborative-mode.md)
 
 ## 📁 Estrutura do Projeto
 
